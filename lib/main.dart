@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_provider/utils/routes/routes.dart';
+import 'package:mvvm_provider/utils/routes/routes_name.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,12 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text("MVVM Provider"),
-        ),
-      ),
+      initialRoute: RoutesName.login,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
